@@ -7,12 +7,12 @@ using TARge21House.Models.House;
 
 namespace TARge21House.Controllers
 {
-	public class HouseController : Controller
+	public class HousesController : Controller
 	{
 		private readonly TARge21HouseContext _context;
 		private readonly IHousesServices _housesServices;
 
-		public HouseController
+		public HousesController
 			(
 				TARge21HouseContext context,
 				IHousesServices housesServices
