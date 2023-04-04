@@ -18,8 +18,8 @@ namespace TARge21House.Core.Domain
 		public int Stories { get; set; }
 		public int Bedrooms { get; set; }
 		public int Bathrooms { get; set; }
-		public double RentPrice { get; set; }
-		public double PurchasePrice { get; set; }
+		public int RentPrice { get; set; }
+		public int PurchasePrice { get; set; }
 		public DateTime BuiltDate { get; set; }
 
 		// only in database

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Runtime.CompilerServices;
 using TARge21House.Core.Domain;
+using TARge21House.Core.Dto;
 using TARge21House.Core.ServiceInterface;
 using TARge21House.Data;
 using TARge21House.Models.House;
@@ -39,7 +40,42 @@ namespace TARge21House.Controllers
 		}
 
 		//get create
+		[HttpGet]
+		public IActionResult Create()
+		{
+			HouseCreateUpdateViewModel house = new HouseCreateUpdateViewModel();
+
+			return View("CreateUpdate", house);
+		}
 		//post create
+		[HttpPost]
+		public async Task<IActionResult> Create(HouseCreateUpdateViewModel vm)
+		{
+			var dto = new HouseDto()
+			{
+				Id = vm.Id,
+
+				MainColor = vm.MainColor,
+				RoofColor = vm.RoofColor,
+				Stories = vm.Stories,
+				Bedrooms = vm.Bedrooms,
+				Bathrooms = vm.Bathrooms,
+				RentPrice = vm.RentPrice,
+				PurchasePrice = vm.PurchasePrice,
+				BuiltDate = vm.BuiltDate,
+				CreatedAt = vm.CreatedAt,
+				ModifiedAt = vm.ModifiedAt
+			};
+
+			var result = await _housesServices.Create(dto);
+
+			if ( result == null)
+			{
+				return RedirectToAction(nameof(Index));
+			}
+
+			return RedirectToAction(nameof(Index), vm);
+		}
 		//get update
 		//post update
 		//get details
