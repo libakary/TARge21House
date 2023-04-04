@@ -1,7 +1,8 @@
 namespace TARge21House.HouseTest
 {
-	public class UnitTest1
+	public class HouseTest
 	{
+		// will be writing the tests here?
 		[Fact]
 		public void Test1()
 		{
