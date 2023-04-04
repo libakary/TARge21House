@@ -63,6 +63,7 @@ namespace TARge21House.Controllers
 				RentPrice = vm.RentPrice,
 				PurchasePrice = vm.PurchasePrice,
 				BuiltDate = vm.BuiltDate,
+
 				CreatedAt = vm.CreatedAt,
 				ModifiedAt = vm.ModifiedAt
 			};

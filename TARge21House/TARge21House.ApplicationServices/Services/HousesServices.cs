@@ -43,6 +43,29 @@ namespace TARge21House.ApplicationServices.Services
 			return house;
 		}
 		//update
+		public async Task<House> Update(HouseDto dto)
+		{
+			var domain = new House()
+			{
+				Id = dto.Id,
+
+				MainColor = dto.MainColor,
+				RoofColor = dto.RoofColor,
+				Stories = dto.Stories,
+				Bedrooms = dto.Bedrooms,
+				Bathrooms = dto.Bathrooms,
+				RentPrice = dto.RentPrice,
+				PurchasePrice = dto.PurchasePrice,
+				BuiltDate = dto.BuiltDate,
+
+				CreatedAt = dto.CreatedAt,
+				ModifiedAt = dto.ModifiedAt
+			};
+
+			_context.Houses.Update(domain);
+			await _context.SaveChangesAsync();
+			return domain;
+		}
 		//delete
 		//get async
 		public async Task<House> GetAsync(Guid id)
