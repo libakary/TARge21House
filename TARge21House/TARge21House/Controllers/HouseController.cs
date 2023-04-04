@@ -12,7 +12,7 @@ namespace TARge21House.Controllers
 		private readonly TARge21HouseContext _context;
 		private readonly IHousesServices _housesServices;
 
-		public HousesController
+		public HouseController
 			(
 				TARge21HouseContext context,
 				IHousesServices housesServices

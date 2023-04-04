@@ -1,5 +1,47 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<TARge21House.Models.House.HouseIndexViewModel>
+
 @{
+	int rowNumber = 1;
+
 }
+
+<div class="h1">
+	Houses
+</div>
+
+<div>
+	<a asp-action="create" asp-controller="houses" type="submit" class="btn btn-primary">Create</a>
+</div>
+
+<form method="post">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th scope="col">Nr</th>
+				<th scope="col">Bedrooms</th>
+				<th scope="col">Bathrooms</th>
+				<th scope="col">Rent Price</th>
+				<th scope="col">Built Date</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			@foreach (var house in Model)
+			{
+				<tr>
+					<td>@rowNumber</td>
+					<td>@house.Bedrooms</td>
+					<td>@house.Bathrooms</td>
+					<td>@house.RentPrice</td>
+					<td>@house.BuiltDate</td>
+					<td>
+						<!--details button-->
+						<!--update button-->
+						<!--delete button-->
+					</td>
+				</tr>
+				rowNumber += 1;
+			}
+		</tbody>
+	</table>
+</form>
