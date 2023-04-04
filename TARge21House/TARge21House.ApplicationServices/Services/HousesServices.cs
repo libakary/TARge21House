@@ -1,4 +1,5 @@
-﻿using TARge21House.Core.Domain;
+﻿using Microsoft.EntityFrameworkCore;
+using TARge21House.Core.Domain;
 using TARge21House.Core.Dto;
 using TARge21House.Core.ServiceInterface;
 using TARge21House.Data;
@@ -44,5 +45,12 @@ namespace TARge21House.ApplicationServices.Services
 		//update
 		//delete
 		//get async
+		public async Task<House> GetAsync(Guid id)
+		{
+			var result = await _context.Houses
+				.FirstOrDefaultAsync(x => x.Id == id);
+
+			return result;
+		}
 	}
 }
