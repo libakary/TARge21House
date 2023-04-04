@@ -36,8 +36,11 @@
 					<td>@house.BuiltDate</td>
 					<td>
 						<!--details button-->
+						<a asp-action="details" asp-controller="houses" asp-route-id="@house.Id" class="btn btn-info">Details</a>
 						<!--update button-->
+						<a asp-action="update" asp-controller="houses" asp-route-id="@house.Id" class="btn btn-primary">Update</a>
 						<!--delete button-->
+						<a asp-action="delete" asp-controller="houses" asp-route-id="@house.Id" class="btn btn-danger">Delete</a>
 					</td>
 				</tr>
 				rowNumber += 1;
