@@ -2,5 +2,10 @@
 {
 	public class HouseIndexViewModel
 	{
+		public Guid? Id { get; set; }
+		public int Bedrooms { get; set; }
+		public int Bathrooms { get; set; }
+		public double RentPrice { get; set; }
+		public DateTime BuiltDate { get; set; }
 	}
 }
