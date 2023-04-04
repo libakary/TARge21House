@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TARge21House.Core.ServiceInterface
 {
-	internal interface IHousesServices
+	public interface IHousesServices
 	{
 	}
 }

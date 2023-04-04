@@ -1,12 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TARge21House.Core.ServiceInterface;
+using TARge21House.Data;
 
 namespace TARge21House.ApplicationServices.Services
 {
-	internal class HousesServices
+	public class HousesServices : IHousesServices
 	{
+		private readonly TARge21HouseContext _context;
+
+		//declares context
+		public HousesServices
+			(
+				TARge21HouseContext context
+			)
+		{
+			_context = context;
+		}
+
+		//create
+		//update
+		//delete
+		//get async
 	}
 }
