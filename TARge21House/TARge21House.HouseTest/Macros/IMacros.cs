@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TARge21House.HouseTest.Macros
 {
-	internal interface IMacros
+	public interface IMacros
 	{
 	}
 }
